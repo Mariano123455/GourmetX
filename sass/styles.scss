@@ -1,0 +1,20 @@
+@use 'colors';
+@use 'navbar';
+@use 'footer';
+@import 'mixins';
+
+$nunito: 'Nunito';
+
+* {
+  font-family: $nunito;
+  hyphens: none;
+}
+
+body {
+  background-color: colors.$bg-color;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

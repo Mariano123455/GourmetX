@@ -1,0 +1,36 @@
+@mixin flex($dir, $wrap, $just, $align) {
+  display: flex;
+  flex-flow: $dir $wrap;
+  justify-content: $just;
+  align-items: $align;
+}
+/* Class Container Styles */
+@mixin container() {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  box-shadow: colors.$box-shadow;
+}
+
+/* Media Queries Especficos */
+@mixin media-xs() {
+  @media screen and (max-width: 525.98px) {
+    @content;
+  }
+}
+@mixin media-sm() {
+  @media screen and (max-width: 824.98px) {
+    @content;
+  }
+}
+@mixin media-lg() {
+  @media (min-width: 825px) and (max-width: 999.98px) {
+    @content;
+  }
+}
+@mixin media-xl() {
+  @media (min-width: 1000px) and (max-width: 1600px) {
+    @content;
+  }
+}

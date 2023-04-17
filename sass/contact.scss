@@ -1,0 +1,142 @@
+@use 'colors';
+@import 'mixins';
+
+/* Form Variables */
+$body-bg-color: #f6f6f6;
+$form-color: #000;
+$form-background-color: #fff;
+$form-font-size: 16px;
+$form-border-radius: 25px;
+$form-shadow: colors.$box-shadow;
+
+body {
+  background-image: url(/assets/img/background-contact.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+label.error {
+  color: red;
+  text-align: center;
+}
+input.error {
+  border-bottom: 1px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact-form {
+  margin: 4em;
+  @include flex(column, nowrap, center, center);
+  background-color: $form-background-color;
+  padding: 3.125em;
+  border-radius: $form-border-radius;
+  box-shadow: $form-shadow;
+  hyphens: none;
+  @include media-sm() {
+    margin: 2em 1em;
+    padding: 0.8em;
+  }
+  @include media-xl() {
+  }
+
+  &__container {
+    @include flex(column, nowrap, center, center);
+  }
+
+  &__title {
+    color: colors.$accent-color;
+    font-weight: 900;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0.5em;
+    border-bottom: 2px solid colors.$secondary-color;
+  }
+
+  &__subtitle {
+    font-weight: 900;
+    font-size: 2em;
+    margin: 0.5em;
+  }
+
+  &__row {
+    @include flex(row, nowrap, space-around, center);
+    width: 100%;
+    margin-bottom: 1.25em;
+    @include media-sm() {
+      @include flex(column, nowrap, center, center);
+    }
+  }
+
+  &__row-textarea {
+    width: 50%;
+    margin-bottom: 1.25em;
+    @include flex(column, nowrap, center, center);
+    @include media-xs() {
+      width: 100%;
+      padding: 0.5em;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 1em;
+    @include media-sm() {
+      width: 80%;
+    }
+  }
+
+  &__label {
+    text-align: center;
+    color: $form-color;
+    font-size: $form-font-size * 1.2;
+    font-weight: 600;
+    margin: 0.625em 0;
+  }
+
+  &__input,
+  &__textarea {
+    text-align: center;
+    padding: 0.625em;
+    border-bottom: 1px solid $form-color;
+    font-size: $form-font-size;
+    background-color: #f1f1f1;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__input:focus,
+  &__textarea:focus {
+    outline: none;
+    border-bottom-color: colors.$accent-color;
+  }
+
+  &__textarea {
+    resize: none;
+    height: 12.5em;
+  }
+
+  &__textarea {
+    flex-grow: 1;
+  }
+
+  &__button {
+    padding: 0.625em 1.25em;
+    border-radius: $form-border-radius;
+    border: none;
+    background-color: colors.$accent-color;
+    color: #000;
+    font-size: $form-font-size;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}

@@ -1,0 +1,246 @@
+@use 'colors';
+@import 'mixins';
+
+@mixin media-xx() {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/assets/img/background-complaint.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+label.error {
+  color: red;
+  text-align: center;
+}
+input.error {
+  border-bottom: 1.5px solid red;
+}
+
+.complaint {
+  @include container();
+  width: 100%;
+  @include flex(column, nowrap, center, center);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  &__container {
+    width: 100%;
+  }
+  &__title {
+    color: #000;
+    font-size: 2.5em;
+    font-weight: 900;
+    margin: 0 0 30px 0;
+    @include media-xx() {
+      font-size: 2em;
+      margin: 0;
+    }
+  }
+}
+
+.progress-bar {
+  @include flex(row, nowrap, center, center);
+  @include media-xx() {
+    flex-wrap: wrap;
+  }
+  &__step {
+    position: relative;
+    min-width: 100px;
+    margin: 0.5em;
+  }
+  &__text {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #000;
+    transition: 0.2s;
+  }
+  &__text--active {
+    color: colors.$accent-color;
+  }
+  &__text--inactive {
+    color: #000;
+  }
+  &__bullet {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: 0.2s;
+    &:before,
+    &:after {
+      position: absolute;
+      height: 3px;
+      width: 90px;
+      bottom: 10px;
+      left: 25px;
+      background: #262626;
+      content: '';
+      @include media-xx() {
+        display: none;
+      }
+    }
+
+    @keyframes animate {
+      100% {
+        transform: scaleX(1);
+      }
+    }
+  }
+  &__bullet--active {
+    border-color: colors.$accent-color;
+    background-color: colors.$accent-color;
+    &:after {
+      background: colors.$accent-color;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: animate 0.4s linear forwards;
+    }
+  }
+  &__bullet-last {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  &__number {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__number--active {
+    display: none;
+  }
+
+  .fa-solid {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+  }
+  .fa-solid--active {
+    display: block;
+    color: #000;
+  }
+}
+
+.form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.complaint-form {
+  display: flex;
+  flex-direction: row;
+  width: 400%;
+  &__page {
+    @include flex(column, nowrap, center, center);
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  &__title {
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 0.8em;
+    margin: 0.5em;
+    @include media-xx() {
+      padding: 0;
+    }
+  }
+  &__subtitle {
+    font-size: 17px;
+  }
+  &__field {
+    @include flex(column, nowrap, center, center);
+    width: 100%;
+    margin: 0.5em;
+  }
+  &__label {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 0.5em;
+  }
+  .required {
+    color: red;
+    hyphens: none;
+  }
+  &__input {
+    width: 400px;
+    padding: 0.7em;
+    margin: 0 1em;
+    border-bottom: 1px solid black;
+    background-color: #e1e1e1;
+    @media (max-width: 450px) {
+      width: 100%;
+    }
+    &:focus {
+      outline: none;
+      border-bottom-color: colors.$accent-color;
+    }
+  }
+  &__field-button {
+    width: 100%;
+  }
+  &__button-container {
+    @include flex(row, wrap, center, center);
+    width: 100%;
+  }
+  .button {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 0.8em 1.8em;
+    margin: 1em;
+    background-color: colors.$accent-color;
+    border-radius: 1.5em;
+    cursor: pointer;
+    @include media-xx() {
+      font-size: 14px;
+    }
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+  #summary {
+    @include flex(column, wrap, center, center);
+    font-size: 24px;
+    margin: 0.5em;
+  }
+  #summary p {
+    @include flex(column, wrap, center, center);
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+    padding: 0.5em;
+    border-bottom: 1px solid black;
+    background-color: #e1e1e1;
+    @include media-xx() {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+  .summaryText {
+    width: 575px;
+    @include media-xs() {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+/* Color Variables */
+/* Mixin Styles */
+/* Class Container Styles */
+/* Media Queries Especficos */
+.gourmetx {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  color: #171717;
+  hyphens: none;
+}
+.gourmetx__content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__content {
+    padding: 10px;
+  }
+}
+.gourmetx__intention {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+.gourmetx__intention-header {
+  padding: 1em;
+  text-align: center;
+}
+.gourmetx__intention-title {
+  font-size: 3.5em;
+  font-weight: 300;
+  border-bottom: 3px solid #ffc300;
+}
+.gourmetx__intention-body {
+  width: 70%;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__intention-body {
+    width: 100%;
+  }
+}
+.gourmetx__intention-text {
+  font-family: "Merriweather";
+  line-height: 2em;
+  font-size: 2em;
+  font-weight: 900;
+  padding: 1em;
+  text-align: center;
+}
+.gourmetx__about {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__about {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: space-between;
+  }
+}
+.gourmetx__about-info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__about-info {
+    width: 100%;
+  }
+}
+.gourmetx__about-header {
+  text-align: center;
+  padding: 1em;
+}
+.gourmetx__about-title {
+  font-size: 3em;
+  font-weight: 300;
+  border-bottom: 3px solid #ffc300;
+}
+.gourmetx__about-body {
+  width: 70%;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__about-body {
+    width: 100%;
+    text-align: center;
+  }
+}
+.gourmetx__about-text {
+  font-size: 1.5em;
+  padding: 1em;
+  text-align: justify;
+}
+.gourmetx__about-img {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__about-img {
+    width: 100%;
+    padding-bottom: 2em;
+  }
+}
+.gourmetx .img {
+  width: 60%;
+  border-radius: 25px;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx .img {
+    width: 50%;
+  }
+}
+.gourmetx__presentation {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+.gourmetx__presentation-header {
+  text-align: center;
+  padding: 1em;
+}
+.gourmetx__presentation-title {
+  font-size: 3em;
+  font-weight: 300;
+  border-bottom: 3px solid #ffc300;
+}
+.gourmetx__presentation-body {
+  width: 70%;
+}
+@media screen and (max-width: 824.98px) {
+  .gourmetx__presentation-body {
+    width: 100%;
+    text-align: center;
+  }
+}
+.gourmetx__presentation-text {
+  font-size: 1.5em;
+  padding: 1em;
+  text-align: justify;
+}
+.gourmetx__presentation-text--bold {
+  font-weight: 900;
+}
+.gourmetx__presentation-text--color {
+  background-color: #ededed;
+  color: #000000;
+  font-weight: 600;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 25px;
+}
+
+/*# sourceMappingURL=nosotros.css.map */

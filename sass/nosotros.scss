@@ -1,0 +1,158 @@
+@use 'colors';
+@import 'mixins';
+
+.gourmetx {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  color: colors.$secondary-color;
+  hyphens: none;
+  &__content {
+    @include flex(column, nowrap, center, center);
+    padding: 2em;
+    @include media-sm() {
+      padding: 10px;
+    }
+  }
+
+  &__intention {
+    @include flex(column, nowrap, center, center);
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    box-shadow: colors.$box-shadow;
+  }
+
+  &__intention-header {
+    padding: 1em;
+    text-align: center;
+  }
+
+  &__intention-title {
+    font-size: 3.5em;
+    font-weight: 300;
+    border-bottom: 3px solid colors.$accent-color;
+  }
+
+  &__intention-body {
+    width: 70%;
+    @include media-sm() {
+      width: 100%;
+    }
+  }
+
+  &__intention-text {
+    font-family: 'Merriweather';
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: 900;
+    padding: 1em;
+    text-align: center;
+  }
+
+  &__about {
+    @include flex(row, nowrap, space-between, center);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    box-shadow: colors.$box-shadow;
+    @include media-sm() {
+      @include flex(column, wrap, center, space-between);
+    }
+  }
+
+  &__about-info {
+    @include flex(column, nowrap, center, center);
+    width: 50%;
+    @include media-sm() {
+      width: 100%;
+    }
+  }
+
+  &__about-header {
+    text-align: center;
+    padding: 1em;
+  }
+
+  &__about-title {
+    font-size: 3em;
+    font-weight: 300;
+    border-bottom: 3px solid colors.$accent-color;
+  }
+
+  &__about-body {
+    width: 70%;
+    @include media-sm() {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__about-text {
+    font-size: 1.5em;
+    padding: 1em;
+    text-align: justify;
+  }
+
+  &__about-img {
+    @include flex(row, nowrap, center, center);
+    width: 50%;
+
+    @include media-sm() {
+      width: 100%;
+      padding-bottom: 2em;
+    }
+  }
+
+  .img {
+    width: 60%;
+    border-radius: 25px;
+    @include media-sm() {
+      width: 50%;
+    }
+  }
+
+  &__presentation {
+    @include flex(column, nowrap, center, center);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    box-shadow: colors.$box-shadow;
+  }
+
+  &__presentation-header {
+    text-align: center;
+    padding: 1em;
+  }
+
+  &__presentation-title {
+    font-size: 3em;
+    font-weight: 300;
+    border-bottom: 3px solid colors.$accent-color;
+  }
+
+  &__presentation-body {
+    width: 70%;
+    @include media-sm() {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__presentation-text {
+    font-size: 1.5em;
+    padding: 1em;
+    text-align: justify;
+  }
+  &__presentation-text--bold {
+    font-weight: 900;
+  }
+  &__presentation-text--color {
+    background-color: #ededed;
+    color: #000000;
+    font-weight: 600;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 25px;
+  }
+}

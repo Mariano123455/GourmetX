@@ -1,0 +1,108 @@
+@use 'colors';
+@import 'mixins';
+
+.header {
+  width: 100%;
+  background-color: colors.$secondary-color;
+  padding: 1em;
+  color: colors.$primary-color;
+  @include media-sm() {
+    z-index: 100;
+  }
+  &__container {
+    width: 100%;
+    min-height: 90px;
+    @include flex(row, wrap, space-between, center);
+    @include media-sm() {
+      @include flex(row, wrap, space-between, center);
+    }
+  }
+  &__title {
+    color: colors.$pastel-lightblue;
+    font-size: 2em;
+    font-family: 'Nunito';
+    font-weight: 900;
+    margin-left: 8em;
+    @include media-sm() {
+      font-size: 2em;
+      margin: 0;
+    }
+  }
+  &__title:hover {
+    color: colors.$accent-color;
+  }
+  &__button {
+    display: none;
+    @include media-sm() {
+      display: block;
+    }
+  }
+  &__svg {
+    fill: colors.$accent-color;
+    transition: width, height 0.5s ease-in-out;
+  }
+  &__svg:hover {
+    fill: colors.$pastel-lightblue;
+  }
+}
+
+.nav {
+  @include media-sm() {
+    width: 100%;
+    @include flex(column, wrap, center, center);
+    opacity: 0;
+    height: 0vh;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    &--active {
+      display: flex;
+      opacity: 1;
+      height: 100vh;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    @include flex(row, nowrap, flex-end, center);
+    @include media-sm() {
+      flex-flow: column;
+    }
+    @include media-xl() {
+      justify-content: space-around;
+      flex-direction: wrap;
+    }
+  }
+
+  &__item {
+    font-family: 'Nunito';
+    font-weight: 400;
+    margin: 0 0.5em;
+    min-height: 25px;
+    color: colors.$primary-color;
+    @include media-sm() {
+      font-size: 1.5em;
+      margin: 1em;
+      border-bottom: 2px solid colors.$accent-color;
+    }
+  }
+
+  &__item:hover {
+    @include media-xl() {
+      color: colors.$pastel-lightblue;
+      border-bottom: 2px solid colors.$accent-color;
+    }
+  }
+
+  &__item--color {
+    background-color: colors.$accent-color;
+    color: colors.$secondary-color;
+    padding: 10px;
+    border-radius: 25px;
+  }
+
+  &__item--color:hover {
+    border: none;
+    background-color: colors.$pastel-lightblue;
+    color: #000;
+  }
+}

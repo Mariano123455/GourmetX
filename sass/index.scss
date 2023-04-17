@@ -1,0 +1,377 @@
+@use 'colors';
+@import 'mixins';
+
+span {
+  color: colors.$pastel-lightblue;
+  font-weight: 700;
+  text-shadow: 2.5px 2.5px 0 #414141;
+}
+span:hover {
+  color: colors.$accent-color;
+}
+
+/* ---------------------------------------------------------------------- */
+.slogan {
+  @include container();
+  &__container {
+    width: 100%;
+    padding: 1em;
+  }
+  &__info {
+    @include flex(row, nowrap, center, center);
+    width: 100%;
+    @include media-sm() {
+      @include flex(column, nowrap, center, center);
+    }
+  }
+  &__item-txt {
+    @include flex(column, nowrap, center, flex-start);
+    width: 50%;
+    padding: 1em;
+    @include media-sm() {
+      @include flex(column, nowrap, center, center);
+      width: 100%;
+    }
+  }
+  &__item-img {
+    width: 50%;
+    @include flex(row, nowrap, center, center);
+    @include media-sm() {
+      width: 100%;
+    }
+  }
+  &__img {
+    @include media-sm() {
+      display: none;
+    }
+  }
+  &__img--hidden {
+    display: none;
+    @include media-sm() {
+      display: block;
+      height: 15em;
+      border-radius: 25px;
+      background-color: colors.$bg-color;
+    }
+  }
+}
+.slogan-txt {
+  &__title {
+    color: colors.$secondary-color;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: 900;
+    padding: 0.5em;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  &__p {
+    font-size: 1.5em;
+    padding: 0.5em;
+    text-align: justify;
+  }
+  &__button {
+    display: inline-block;
+    background-color: colors.$accent-color;
+    padding: 0.8em 1.8em;
+    margin: 1em 0 1em 1em;
+    border-radius: 1.5em;
+    color: black;
+    text-transform: capitalize;
+    box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.25);
+    @include media-xs() {
+      margin-left: 0;
+    }
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+.error {
+  display: block;
+  width: calc(70% - 2em);
+  color: yellow;
+  font-size: 1.2em;
+  padding: 0 1em 0 1em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgba(0, 0, 0, 70%);
+}
+.newsletter {
+  @include container();
+  background-image: url(/assets/img/newsletter-img.jpg);
+  background-position: center;
+  background-size: cover;
+  &__container {
+    @include flex(row, wrap, center, center);
+    padding: 3em;
+  }
+  &__content {
+    width: 80%;
+    @include media-sm {
+      width: 100%;
+    }
+  }
+  &__item-title {
+    border-radius: 10px;
+    margin-bottom: 2em;
+  }
+  &__title {
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+    font-size: 1.6em;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+.newsletter-form {
+  &__container {
+    @include flex(row, nowrap, center, center);
+  }
+  &__container--relative {
+    @include flex(row, wrap, center, center);
+    position: relative;
+    margin-bottom: 20px;
+  }
+  &__label {
+    position: absolute;
+    top: 20px;
+    left: 170px;
+    font-size: 1.2em;
+    color: #fff;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    @include media-sm() {
+      left: 40px;
+    }
+  }
+  &__input {
+    color: #fff;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 0 #000;
+    width: calc(70% - 2em);
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 35%);
+    @include media-sm() {
+      width: calc(100% - 2em);
+    }
+    &:focus {
+      outline: none;
+      border-bottom-color: colors.$accent-color;
+      filter: brightness(1.5);
+    }
+  }
+  &__button {
+    display: inline-block;
+    color: black;
+    background-color: colors.$pastel-lightblue;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 0.8em 1.8em;
+    margin: 1em 0 1em 1em;
+    border-radius: 1.5em;
+    box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.25);
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+.us {
+  @include container();
+  &__container {
+    width: 100%;
+    padding: 1em;
+  }
+  &__info {
+    @include flex(row, nowrap, center, center);
+    width: 100%;
+    @include media-sm() {
+      @include flex(column, nowrap, center, center);
+    }
+  }
+  &__item-img {
+    width: 50%;
+    @include flex(row, nowrap, center, center);
+    @include media-sm() {
+      width: 100%;
+    }
+  }
+  &__img {
+    @include media-sm() {
+      display: none;
+    }
+  }
+  &__img--hidden {
+    display: none;
+    @include media-sm() {
+      display: block;
+      height: 15em;
+      border-radius: 25px;
+      background-color: colors.$bg-color;
+    }
+  }
+  &__item-txt {
+    @include flex(column, nowrap, center, flex-start);
+    width: 50%;
+    padding: 1em;
+    @include media-sm() {
+      @include flex(column, nowrap, center, center);
+      width: 100%;
+    }
+  }
+}
+.us-txt {
+  &__pretitle {
+    color: colors.$accent-color;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 0.5em 0.5em 0.5em 1em;
+  }
+  &__title {
+    color: colors.$secondary-color;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    padding: 0.5em;
+    @include media-sm() {
+      text-align: center;
+    }
+  }
+  &__p {
+    font-size: 1.2em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    text-align: justify;
+  }
+  &__button {
+    display: inline-block;
+    background-color: colors.$accent-color;
+    padding: 1em;
+    margin: 1em 0 1em 1em;
+    border-radius: 1.5em;
+    color: black;
+    text-transform: capitalize;
+    box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.25);
+    @include media-sm() {
+      margin-left: 0;
+    }
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+.products {
+  @include container();
+  &__container {
+    @include flex(column, wrap, center, center);
+    width: 100%;
+  }
+  &__info {
+    @include flex(column, nowrap, center, center);
+    padding: 1em;
+  }
+  &__title {
+    color: colors.$secondary-color;
+    font-size: 2em;
+    font-weight: 900;
+    padding: 0.5em;
+  }
+  &__p {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 1em;
+    text-align: center;
+  }
+  &__list {
+    @include flex(row, wrap, center, center);
+    padding: 1em;
+    @include media-sm() {
+      @include flex(column, wrap, center, center);
+    }
+  }
+  &__item {
+    width: calc(50% - 1em);
+    @include flex(column, nowrap, center, space-between);
+    border-radius: 1.5em;
+    box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.15);
+    margin: 0.5em;
+    @include media-sm() {
+      width: calc(100% - 1em);
+    }
+  }
+  &__item-h3 {
+    font-size: 1.2em;
+    font-weight: 900;
+    text-align: center;
+    padding: 0.625em;
+  }
+  &__item-p {
+    font-size: 1.1em;
+    text-align: center;
+    width: 100%;
+    min-height: 5em;
+    padding: 0.625em;
+  }
+  &__item-button {
+    text-align: center;
+    background-color: colors.$accent-color;
+    padding: 0.625em;
+    border-radius: 5px 5px 1.5em 1.5em;
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 15em;
+    border-radius: 1.5em 1.5em 0 0;
+  }
+}
+
+.info {
+  @include flex(row, wrap, center, center);
+  @include container();
+  height: 700px;
+  background-image: url(/assets/img/bg-info.jpg);
+  background-position: center;
+  background-size: cover;
+  &__container {
+    @include flex(row, wrap, center, center);
+    width: 100%;
+  }
+  &__item {
+    @include flex(column, nowrap, center, center);
+    width: 300px;
+    min-height: 175px;
+    padding: 0.9em 1.5em;
+    margin: 1em;
+    background-color: #fff;
+    box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.25);
+    border-radius: 1.5em;
+  }
+  &__item-title {
+    color: colors.$secondary-color;
+    font-size: 1.25em;
+    font-weight: 900;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+  }
+  &__item-p {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.1em;
+  }
+  &__item-img {
+    width: 3em;
+  }
+}
